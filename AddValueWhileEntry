@@ -1,1 +1,23 @@
+  
+(input)="Add($event.target.value,i)"  
+  
+  listOfIndex: any[]=[];
+  listOfChalan :any[]=[]
 
+Add(e,index)
+  {
+
+    let minqty;
+    if(this.listOfIndex.includes(index))
+    {
+      minqty=this.listOfChalan[index]
+      this.total-=minqty;
+      this.listOfChalan[index]= this.detailsArray[index].ChallanQty
+      this.total+= this.detailsArray[index].ChallanQty
+    }
+    else{
+      this.listOfIndex.push(index);
+      this.listOfChalan[index]= this.detailsArray[index].ChallanQty
+      this.total+= this.detailsArray[index].ChallanQty
+    }
+}
