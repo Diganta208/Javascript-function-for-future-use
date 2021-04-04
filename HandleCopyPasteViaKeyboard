@@ -1,0 +1,13 @@
+ numberOnly(event: KeyboardEvent) {
+    var cntrlKey = event.ctrlKey;
+    let key = event.key;
+    if (cntrlKey) {
+      if (key !== 'v') event.preventDefault();
+    }
+    else {
+      const number = Number.parseInt(event.key);
+      if (!number && key !== '.' && key !== 'Backspace' && key !== '0') event.preventDefault();
+    }
+    cntrlKey = false;
+    key = '';
+  }
