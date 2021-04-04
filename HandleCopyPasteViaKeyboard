@@ -1,4 +1,6 @@
- numberOnly(event: KeyboardEvent) {
+(keydown)="api.numberOnly($event)"
+
+numberOnly(event: KeyboardEvent) {
     var cntrlKey = event.ctrlKey;
     let key = event.key;
     if (cntrlKey) {
