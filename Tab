@@ -1,1 +1,10 @@
 
+tabindex="-1" (keydown.tab)="onPress($event,0)"
+declare var $ as any
+  onPress(e :any, i : number)
+  {
+      setTimeout(() => {
+        $('tr').eq(i + 2).find('td').eq(2).click();
+      });
+    
+  }
