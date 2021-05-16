@@ -1,0 +1,50 @@
+function appendAndDelete(s, t, k) {
+
+let count=0
+    
+    for(let i=k-1; i>=0; i--)
+    {
+        if(i==0 && s==t)  return "Yes"
+        else if(i==0 && s!=t) return "No"
+        else
+        {
+            if(s.includes(t))
+            {
+                if(s.length== t.length) 
+                {
+                    count++;
+                    continue;
+                } 
+                else
+                {
+                   console.log(k)
+                  console.log((s.length-t.length)+count)
+                  if(k==(s.length-t.length)+count)
+                  {
+                      console.log(s[t.length])
+                      t+=s[t.length]
+                      console.log(t)
+                      count++
+                  }
+                  else{
+                    count++;
+                    continue;
+                  }
+                }
+            }
+            else
+            {
+                if(t.length==1) t=''
+                else 
+                {
+                    if(count==0)  t= t.slice(0,(t.length-1)-count)
+                    else t= t.slice(0,(t.length+1)-count)
+                     
+                }
+                console.log(t)
+                count++
+            }
+        }
+     }
+    
+    }
