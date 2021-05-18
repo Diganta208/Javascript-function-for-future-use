@@ -1,11 +1,13 @@
-first install open ssl
-then run this command openssl command prompt
+//first install open ssl
+//then run this command openssl command prompt
 
-openssl genrsa -out key.pem
-openssl req -new -key key.pem -out csr.pem
-openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
+//openssl genrsa -out key.pem
+//openssl req -new -key key.pem -out csr.pem
+//openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
 
-in loopback server.js file
+//in loopback server.js file
+
+
 'use strict';
 
 const loopback = require('loopback');
