@@ -1,0 +1,25 @@
+function reverse(llist) {
+    // Write your code here
+    
+    let current=llist
+    let prev= null
+    let next
+    
+    while(current)
+    {
+       next=current.next
+       current.next=prev
+       prev=current
+       current=next
+    }
+    
+    let head= prev
+    let result=''
+    while(head!=null)
+    { 
+        if(head.next==null)  result+=head.data
+        else  result+=head.data+' '
+        head=head.next
+    }
+    console.log(result)
+}
