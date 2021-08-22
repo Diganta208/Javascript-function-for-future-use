@@ -1,0 +1,28 @@
+  
+  ngOnInit(){
+     this.refreshData()
+  }
+  
+  
+  cancelPageRefresh(){
+    if(this.dataRefresher){
+        clearInterval(this.dataRefresher);
+    }    
+  }
+
+  ngOnDestroy(){
+  this.cancelPageRefresh();
+  }
+
+  refreshData(){
+    this.dataRefresher =
+      setInterval(() => {
+        this.getTotalOrder();
+      this.getTotalChallan();
+      this.getTotalOrderValueAndChallanValue();
+      this.getWeeklyTotalOrderValueAndChallanValue();
+      this.getMonthlyTotalOrderValueAndChallanValue();
+      this.getQuarterlyTotalOrderValueAndChallanValue()
+        //Passing the false flag would prevent page reset to 1 and hinder user interaction
+      }, 30000);  
+  }
